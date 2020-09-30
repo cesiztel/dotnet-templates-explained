@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Cesar Izquierdo Tello",
+    "classifications": [ "Common", "Code" ],
+    "identity": "ExampleTemplate.HelloWorldNow",
+    "name": "Example templates: hello world now",
+    "shortName": "hellonow",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "preferNameDirectory" : "true" 
+}

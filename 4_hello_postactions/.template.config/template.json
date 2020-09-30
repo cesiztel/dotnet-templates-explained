@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Cesar Izquierdo Tello",
+    "classifications": [ "Common", "Code" ],
+    "identity": "ExampleTemplate.HelloPostActions",
+    "name": "Example templates: hello post actions",
+    "shortName": "hellopostactions",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "preferNameDirectory" : "true" ,
+    "symbols": {
+      "companyName": {
+        "type": "parameter",
+        "defaultValue": "MarvelCompany",
+        "replaces": "company_name"
+      },
+      "department": {
+        "type": "parameter",
+        "dataType": "choice", 
+        "choices": [
+          {
+            "choice": "Marketing",
+            "description": "Marketing department"
+          },
+          {
+            "choice": "HR",
+            "description": "HR department"
+          },
+          {
+            "choice": "Engineering",
+            "description": "Engineering department"
+          }
+        ],  
+        "defaultValue": "Engineering",
+        "replaces": "department"
+      },
+      "skipRestore": {
+        "type": "parameter",
+        "datatype": "bool",
+        "description": "If specified, skips the automatic restore of the project on create.",
+        "defaultValue": "false"
+      }
+    },
+    "sources": [
+      {
+        "modifiers": [
+          {
+            "condition": "(department != Marketing)",
+            "exclude":[
+              "**/Extensions",
+              "**/Extensions/**"
+            ]
+          }
+        ]
+      }
+    ],
+    "postActions": [
+      {
+        "condition": "(!skipRestore)",
+        "description": "Restore NuGet packages required by this project.",
+        "manualInstructions": [
+          { "text": "Run 'dotnet restore'" }
+        ],
+        "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+        "continueOnError": true
+      }
+    ]
+}

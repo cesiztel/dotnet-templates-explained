@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Cesar Izquierdo Tello",
+    "classifications": [ "Common", "Code" ],
+    "identity": "ExampleTemplate.HelloSymbols",
+    "name": "Example templates: hello symbols",
+    "shortName": "hellosymbols",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "preferNameDirectory" : "true" ,
+    "symbols": {
+      "companyName": {
+        "type": "parameter",
+        "defaultValue": "MarvelCompany",
+        "replaces": "company_name"
+      },
+      "department": {
+        "type": "parameter",
+        "dataType": "choice", 
+        "choices": [
+          {
+            "choice": "Marketing",
+            "description": "Marketing department"
+          },
+          {
+            "choice": "HR",
+            "description": "HR department"
+          },
+          {
+            "choice": "Engineering",
+            "description": "Engineering department"
+          }
+        ],  
+        "defaultValue": "Engineering",
+        "replaces": "company_department"
+      }
+    }
+}
